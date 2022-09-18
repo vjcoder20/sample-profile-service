@@ -18,7 +18,7 @@ Profile Service is your own service which will be deployed and verified by you w
 ## Pre-requisites (Should be installed)
 - [VSCode](https://code.visualstudio.com/)
 - [Git](https://git-scm.com/downloads)
-- Account on [Heroku](https://signup.heroku.com/)
+- Account on [Render](https://render.com/)
 - [Insomnia](https://insomnia.rest/) or [Postman](https://www.postman.com/)
 - [NodeVersion 14.18.x](https://nodejs.org/en/download/releases/)
 - [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable)
@@ -59,7 +59,7 @@ Open New Terminal in VSCode and run following command
 ```yarn``` or ```yarn install```
 This will bring in all the packages and dependencies if any left.
 
-## Maing It your own
+## Making It your own
 Now we will create a file local to you that contains all your profile data. We will use environment variables so that only you and authorized RDS service can access your data and not anyone who has your deployment link
 
 ### Step 1:
@@ -117,66 +117,63 @@ To test other APIs we need to deploy our service and generate chaincode from RDS
 Now we will deploy our service so that it is running on a server and accessible to everyone and is not running only locally on your machine.
 
 ### Step 1
-Login to your Heroku account.
+Login to your Render account. After logging in go to your dashboard and you will this interface.
 
-![image](https://user-images.githubusercontent.com/78433013/172591791-017ab48a-1f85-4b2b-9cd9-66da30f6ac1e.png)
+![image](https://user-images.githubusercontent.com/79859472/190889532-247d46b3-e396-49db-9ea7-bd7ee7811c69.png)
 
 ### Step 2
-Click on `New` and you will see dropdown having two options i.e. `Create New App` and `Create New Pipeline`
+Click on `New` and you will see a dropdown having multiple options.
 
-![image](https://user-images.githubusercontent.com/78433013/172592073-19a8a831-551b-49b8-a18e-7b3019ec424c.png)
+![image](https://user-images.githubusercontent.com/79859472/190889882-ab9340f9-c5b5-4fbe-bac3-5f7e53c14a85.png)
 
-Click on `Create New App`
+Click on `Web Service`
 
 ### Step 3
-Now, you will be directed to a new page where you have to create your new heroku app
+Now, you will be directed to a new page where you have to configure your GitHub or Gitlab account so that you can deploy your profile service on Render.
 
-![image](https://user-images.githubusercontent.com/78433013/172592488-920384c1-d144-462d-acf2-75c35cbebab5.png)
+![image](https://user-images.githubusercontent.com/79859472/190889930-1ca8ae09-3ef1-46f6-a850-0eacc2d89d6b.png)
 
-Enter the valid app name as per your choice, make sure you have entered a name relevant to the app and available on Heroku.
+Now select your profile service repository to deploy.
 
-![image](https://user-images.githubusercontent.com/78433013/172592969-e4c810d5-8cf0-47e5-94a5-7fd442e523b8.png)
-
-Then click on `Create App`.
-Wohoo!! you have successfully created your Heroku app, now you have to deploy the code in your local to Heroku.
+Then click on `Connect`.
 
 ### Step 4
-Now you will seeing your deploy section of the Heroku app as below.
+Now you will seeing your deploy section of the Render app as below.
 
-![image](https://user-images.githubusercontent.com/78433013/172593891-762a00e6-b78d-44f1-b560-480229903a31.png)
+![image](https://user-images.githubusercontent.com/79859472/190890103-49a2feae-9d83-4e5b-ac5a-d6af63d3fa38.png)
 
-In the middle of the page, you will be able to see various deployment methods like Heroku Git or GitHub etc.
-You can use either of them, mostly we use Heroku Git or GitHub one.
+Now, fill in all the inputs correctly.
 
-If you select `Heroku Git`, there will be instructions given just below the options to execute in your Terminal/Command Line Interface
+Then, select the Free tier as shown below,
 
-Follow the instructions as per in the given order
-
-![image](https://user-images.githubusercontent.com/78433013/172601479-d89232d7-2273-4148-8c69-e70e7569f15c.png)
-
-After you have run this command `git push heroku master`
-Wait for few minutes or seconds to get the deployment done
-Awesome 🥳 🎉, your service is deployed and you can access your deployed service with the provided url by Heroku
+![image](https://user-images.githubusercontent.com/79859472/190890223-19ab6a17-de9d-45a7-9d42-c4e3c0d41c0b.png)
 
 ### Step 5
-Now Open Heroku and go to the settings in the app you created.
+Now click on the advanced option below the plans section.
 
 ### Step 6
-You will find Configure Vars there. Click on `Reveal Config Vars`
+You will find `Add Environment Variables` option along with other options. Leave others as default and click on the add environment variables button.
 
-![config Cars](https://user-images.githubusercontent.com/76257739/172948484-1bc29df1-e9af-4970-9ade-05ffbde68555.png)
+![Add Environment Variables](https://user-images.githubusercontent.com/79859472/190890279-8fa2ae49-96f8-4702-8d28-096da5f65710.png)
 
 ### Step 7
-Now you will find a box for Key, one box for Value and one Add button.
-Copy first key from your .env file into `KEY box` and copy its value(**Without apostrophee**) in `VALUE box` and click on Add button. For empty values leave the VALUE box empty and click Add button
+Now you will find a box for Key and one box for Value.
+Copy the first key from your .env file into the `KEY box` and copy its value(Without **apostrophes**) in the `VALUE box` and click on Add button. For empty values add a space in the VALUE box.
 
-![keyval](https://user-images.githubusercontent.com/76257739/172948506-78a2dc23-2ae2-4c35-bdf4-77dc573ac460.png)
+![keyval](https://user-images.githubusercontent.com/79859472/190890331-b4f7c987-a93a-444c-909e-3d3fe1730ce0.png)
 
 ### Step 8
 Do Step 7 Repeatedly for all values of .env file but leave chaincode because that will be generated later on.
 
 ### Step 9
 And you are done with deployment. Now only deployment link which is protected and you have your personal info and cannot even be uploaded by mistake on Github.
+
+### Step 10
+Finally, scroll down and you will find a button named `Create Web Service`. Click on that button to deploy your code.
+
+![Create Web Service](https://user-images.githubusercontent.com/79859472/190890397-9266f794-3315-4a7c-8261-5f838ca61681.png)
+
+🥳 Congratulations, you have successfully deployed your profile service.
 
 ## Joining Us
 Now you will be linking your deployed service with us i.e. RDS.
@@ -209,32 +206,25 @@ Click on `Copy` to copy the chaincode.
 **Note : Keep this generated code very safely as you will be able to see it once only.**
 
 ### Step 4
-Now open .env file in your profile service and paste the copied chaincode in front of `CHAIN_CODE` key.
-Also Update the chaincode in Configure Vars in deployment as discussed in `Step 7 of Deployment.`
+Now open the .env file in your profile service and paste the copied chaincode in front of the `CHAIN_CODE` key.
+Also, Update the chaincode in deployment from `Dashboard -> click on your deployed service -> Environment -> update the chaincode` as discussed in Step 7 of Deployment.
+
 Now we have completed all the information.
 
 ### Step 5
-Run these commands in your terminal to push the code to your deployed service through the Heroku CLI
+Now, push your code to the remote repository
 
-```git add .```
+`git add .`
 
-```git commit -am "<ENTER_YOUR_COMMIT_MESSAGE>"```
+`git commit -m "<ENTER_YOUR_COMMIT_MESSAGE>"`
 
-```git push heroku master ```
+If your branch name is `main` then use this
 
-If you were using the second method of `GitHub` to deploy your service
-
-```git add .```
-
-```git commit -am "<ENTER_YOUR_COMMIT_MESSAGE>"```
-
-If your branch name is `master` then use this
-
-```git push origin master ```
+`git push origin main`
 
 Otherwise,
 
-```git push origin <ENTER_YOUR_BRANCH_NAME> ```
+```git push origin <ENTER_YOUR_BRANCH_NAME>```
 
 ### Step 6
 Now that you have pushed your code with the chaincode. Enter your deployed service URL here.
@@ -253,7 +243,7 @@ Awesome, Congratulations 🥳 🎉 on becoming a user in Real Dev Squad and
 
 **Note : ** If you are unable to verify your service or their are some errors that you get encountered. Please reach out to members of Real Dev Squad from [here](https://members.realdevsquad.com/)
 
-## Additionl Information
+## Additional Information
 
 1. You can run `yarn run test` cmd in local after completing all information and see if any test is failing. If any of the test is failing please re check the information entered by you in .env file.
 **These tests check the functionality of all three APIs.**
