@@ -117,7 +117,7 @@ To test other APIs we need to deploy our service and generate chaincode from RDS
 Now we will deploy our service so that it is running on a server and accessible to everyone and is not running only locally on your machine.
 
 ### Step 1
-Login to your Render account. After logging in go to your dashboard and you will this interface.
+Login to your Render account. After logging in go to your dashboard and you will see this interface.
 
 ![image](https://user-images.githubusercontent.com/79859472/190889532-247d46b3-e396-49db-9ea7-bd7ee7811c69.png)
 
