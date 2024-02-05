@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
 const dotenv = require('dotenv').config();
+const { sha512 } = require('js-sha512');
 
 const getHealth = (_,res) => {
     res.send('Profile Service - Health Verified');
@@ -37,7 +38,7 @@ const verification = async (req,res) => {
     }
     try{
         const cryptingToken = req.body.salt;
-        const hash = await bcrypt.hash(process.env.CHAIN_CODE,cryptingToken);
+        const hash = sha512(cryptingToken + process.env.CHAIN_CODE);
         res.send( JSON.stringify({
             hash: hash
         }));
