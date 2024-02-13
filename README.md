@@ -75,13 +75,16 @@ PHONE='your contact number'
 YOE=your years of experience
 COMPANY='Your company / University you are in'
 DESIGNATION='Current Role'
-GITHUB_ID='github_id'
-LINKEDIN_ID='linkedin_id'
-TWITTER_ID='twitter_id'
-INSTAGRAM_ID='instagram_id'
+GITHUB_ID='github_id<github_user_id not the full url>'
+LINKEDIN_ID='linkedin_id<linkedin_user_id not the full url>'
+TWITTER_ID='twitter_id<twitter_user_id not the full url>'
+INSTAGRAM_ID='instagram_id<instagram_user_id not the full url>'
 WEBSITE='your portfolio website. Leave empty if not there'
 CHAIN_CODE='Your chain code. Will be generated in further steps when deploying'
 ```
+
+### Note : Make sure you add all the keys, website can be optional.
+
 ### Step 3:
 Add a [gitignore](https://www.atlassian.com/git/tutorials/saving-changes/gitignore) file and add .env file in it so it is not tracked and your personal information is never uploaded to Github.
 
@@ -156,19 +159,24 @@ You will find `Add Environment Variables` option along with other options. Leave
 
 ![Add Environment Variables](https://user-images.githubusercontent.com/79859472/190890279-8fa2ae49-96f8-4702-8d28-096da5f65710.png)
 
+### Note : Make sure you add all the keys, website can be optional.
+
 ### Step 7
+Make sure you clear cache and redeploy your service after storing env specifically chain_code.
+
+### Step 8
 Now you will find a box for Key and one box for Value.
 Copy the first key from your .env file into the `KEY box` and copy its value(Without **apostrophes**) in the `VALUE box` and click on Add button. For empty values add a space in the VALUE box.
 
 ![keyval](https://user-images.githubusercontent.com/79859472/190890331-b4f7c987-a93a-444c-909e-3d3fe1730ce0.png)
 
-### Step 8
+### Step 9
 Do Step 7 Repeatedly for all values of .env file but leave chaincode because that will be generated later on.
 
-### Step 9
+### Step 10
 And you are done with deployment. Now only deployment link which is protected and you have your personal info and cannot even be uploaded by mistake on Github.
 
-### Step 10
+### Step 11
 Finally, scroll down and you will find a button named `Create Web Service`. Click on that button to deploy your code.
 
 ![Create Web Service](https://user-images.githubusercontent.com/79859472/190890397-9266f794-3315-4a7c-8261-5f838ca61681.png)
