@@ -1,7 +1,7 @@
 # User-Profile-Service-RDS
 
 ## Introduction
-To join the community Real Dev Squad, follow the instructions below and you will get the Discord Invite Link to join the server.
+Follow the instructions below to deploy and link your profile service.
 
 # Profile Service Feature
 - User Profile Service consists of 3 APIs /health, /profile, and /verification
