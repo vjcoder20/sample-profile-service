@@ -20,7 +20,7 @@ Profile Service is your service which will be deployed and verified by you with 
 - [Git](https://git-scm.com/downloads)
 - Account on [Render](https://render.com/)
 - [Insomnia](https://insomnia.rest/) or [Postman](https://www.postman.com/)
-- [NodeVersion 14.18.x](https://nodejs.org/en/download/releases/)
+- [NodeVersion 18.17.0](https://nodejs.org/en/download/releases/)
 - [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable)
 ## Steps to Follow
 ### Step 1
