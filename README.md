@@ -71,7 +71,7 @@ Copy the following data in your .env file and replace right side values with you
 FIRST_NAME='first_name'
 LAST_NAME='last_name'
 EMAIL='email_id'
-PHONE='your contact number'
+PHONE='your contact number without country code'
 YOE=your years of experience
 COMPANY='Your company / University you are in'
 DESIGNATION='Current Role'
