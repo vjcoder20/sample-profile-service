@@ -75,15 +75,15 @@ PHONE='your contact number without country code'
 YOE=your years of experience
 COMPANY='Your company / University you are in'
 DESIGNATION='Current Role'
-GITHUB_ID='github_id<github_user_id not the full url>'
-LINKEDIN_ID='linkedin_id<linkedin_user_id not the full url>'
-TWITTER_ID='twitter_id<twitter_user_id not the full url>'
-INSTAGRAM_ID='instagram_id<instagram_user_id not the full url>'
+GITHUB_ID='github_id<github_id not the full url>'
+LINKEDIN_ID='linkedin_id<linkedin_id not the full url>'
+TWITTER_ID='twitter_id<twitter_id not the full url>'
+INSTAGRAM_ID='instagram_id<instagram_id not the full url>'
 WEBSITE='your portfolio website. Leave empty if not there'
 CHAIN_CODE='Your chain code. Will be generated in further steps when deploying'
 ```
 
-### Note: Make sure you add all the keys, website can be optional.
+### Note: FIRST_NAME, LAST_NAME, EMAIL, PHONE, COMPANY, DESIGNATION, GITHUB_ID, LINKEDIN_ID, and CHAIN_CODE are required fields. If you don't have these fields or you have these with empty values or spaces, they will fail in validation and your profile service get blocked. PHONE should be only digits, YOE is a number and can be a minimum of 0.
 
 ### Step 3:
 Add a [gitignore](https://www.atlassian.com/git/tutorials/saving-changes/gitignore) file and add a .env file in it so it is not tracked and your personal information is never uploaded to Github.
